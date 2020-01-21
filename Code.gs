@@ -1,3 +1,17 @@
+/*
+	Script that fetches a remote CSV file and uses it as a Product Data import in Google Analytics
+	By Julien Coquet - https://juliencoquet.com/en/
+
+	Pre-requisites:
+		A CSV generation engine that populates a feed with required columns:
+			- Product ID (SKU)
+			- Other product attributes such as Product Name, Product Category, Product Unit Price...
+		Google Analytics property 
+			- with Enhanced eCommerce enabled
+			- with at least one Data Import set up for Product Data
+		Google Sheet with access granted to Google Analytics API
+*/
+
 function uploadProductFeed(){
   
   // CSV feed URL
@@ -26,4 +40,5 @@ function uploadProductFeed(){
     customDataSourceId, 
     csvContent
   );
+  // For good measure, check your upload status in case your feed has a formatting issue (it can happen)
 }
